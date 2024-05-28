@@ -3,7 +3,7 @@ project:
   title:        "Neural Network dinamic"      # Project title
   author:       "Kevin Gajardo, David Tapia"      # Your name
   discord:      "Kevomlml, "      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
+  description:  "One line description"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     66MHz       # Clock frequency in Hz (or 0 if not applicable)
 

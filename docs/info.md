@@ -9,6 +9,8 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
+The project consists of a neural network of 4 parameterizable and reusable neurons, thanks to control signals.
+
 From an 8-bit input, the inputs will be entered into a reusable neural network of 4 neurons, through a shift register 4 different inputs are captured. Furthermore, thanks to a state machine, the parameters associated with each neuron are obtained; 4 weights and 1 bias, in total 20 parameters.
 
 State changes are made using a binary signal, where the input data, neuron parameters are received and finally the neurons are fed back. During the first state it is possible to observe the result of the applied network.

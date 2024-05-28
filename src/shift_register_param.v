@@ -99,20 +99,23 @@ begin
                         w11<=w12;
                         w12<=w13;
                         w13<=b1;
-                        b1<=th1;
-                        th1<=w20;
+                        //b1<=th1;
+                        b1<=w20;
+                        //th1<=w20;
                         w20<=w21;
                         w21<=w22;
                         w22<=w23;
                         w23<=b2;
-                        b2<=th2;
-                        th2<=w30;
+                        //b2<=th2;
+                        b2<=w30;
+                        //th2<=w30;
                         w30<=w31;
                         w31<=w32;
                         w32<=w33;
                         w33<=b3;
-                        b3<=th3;
-                        th3<=data_in;
+                        //b3<=th3;
+                        b3<=data_in;
+                        //th3<=data_in;
                         end
             2'b10   :   begin 
                         w00<=w00;

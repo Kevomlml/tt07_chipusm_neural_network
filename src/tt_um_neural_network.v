@@ -24,7 +24,7 @@ wire [7:0] w30, w31, w32, w33, b3, th3;
 // Instanciando los módulos
 machine machine_inst (
     .clk(clk),
-    .reset(~reset),
+    .reset(~rst_n),
     .changes(uio_in[2]),
     .state(state)
 );

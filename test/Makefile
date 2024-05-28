@@ -5,7 +5,7 @@
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES = tt_um_neural network.v
+PROJECT_SOURCES = tt_um_neural network.v maquina_estados.v perceptron.v shift_register_inputs.v shift_register_param.v
 
 ifneq ($(GATES),yes)
 

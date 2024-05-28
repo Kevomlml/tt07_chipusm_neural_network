@@ -26,7 +26,8 @@ machine machine_inst (
     .clk(clk),
     .reset(~rst_n),
     .changes(uio_in[1]),
-    .state(state)
+    .state(state),
+    .finished(uio_in[0])
 );
 
 shift_register_inputs shift_reg_inst (
@@ -35,7 +36,6 @@ shift_register_inputs shift_reg_inst (
     .data_in(ui_in),
     .selector(state),
     //.selector_output(uio_in[1:0]),
-    .finished(uio_in[0]),
     .neuron0_output(neuron0_output),
     .neuron1_output(neuron1_output),
     .neuron2_output(neuron2_output),

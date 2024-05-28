@@ -32,7 +32,7 @@ always @(*) begin
                         end
         state_data_OUT: if (changes) begin
                         next_state = state_data_BUFF;
-                        end if (finished) begin
+                        end else if (finished) begin
                         next_state = state_data_IN; //show the results
                         end
         default: if (changes) begin

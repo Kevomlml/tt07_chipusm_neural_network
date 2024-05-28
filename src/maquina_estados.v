@@ -2,6 +2,7 @@ module machine (
     input wire clk,
     input wire reset,
     input wire changes,
+    input wire finished,
     output reg [1:0] state
 );
 
@@ -31,6 +32,8 @@ always @(*) begin
                         end
         state_data_OUT: if (changes) begin
                         next_state = state_data_BUFF;
+                        end if (finished) begin
+                        next_state = state_data_IN; //show the results
                         end
         default: if (changes) begin
                 next_state=current_state;

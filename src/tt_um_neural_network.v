@@ -4,9 +4,9 @@ module tt_um_neural_network (
     input wire [2:0] uio_in,
     input wire [7:0] ui_in,
     
-    output wire [7:0] uo_out
+    output wire [7:0] uo_out,
 
-    input wire ena,
+    input wire ena
 );
 
 // Señales internas

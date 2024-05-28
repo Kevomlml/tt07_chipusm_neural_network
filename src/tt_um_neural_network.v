@@ -1,6 +1,6 @@
 module tt_um_neural_network (
     input wire clk,
-    input wire reset,
+    input wire rst_n,
     input wire [2:0] uio_in,
     input wire [7:0] ui_in,
     
@@ -28,7 +28,7 @@ machine machine_inst (
 
 shift_register_inputs shift_reg_inst (
     .clk(clk),
-    .rstn(~reset),
+    .rstn(~rst_n),
     .data_in(ui_in),
     .selector(state),
     .selector_output(uio_in[1:0]),
@@ -101,7 +101,7 @@ perceptron perceptron3 (
 
 register_parameters reg_params_inst (
     .clk(clk),
-    .reset(~reset),
+    .reset(~rst_n),
     .data_in(ui_in),
     .selector(state),
     .th3(th3),

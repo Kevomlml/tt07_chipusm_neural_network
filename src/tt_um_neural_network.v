@@ -10,7 +10,8 @@ module tt_um_neural_network (
 
     input wire ena
 );
-
+assign uio_oe = 0;
+assign uio_out = 0;    
 // Señales internas
 wire [1:0] state;
 wire [7:0] neuron_input0, neuron_input1, neuron_input2, neuron_input3;

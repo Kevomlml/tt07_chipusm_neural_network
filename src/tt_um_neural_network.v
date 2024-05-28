@@ -25,7 +25,7 @@ wire [7:0] w30, w31, w32, w33, b3;
 machine machine_inst (
     .clk(clk),
     .reset(~rst_n),
-    .changes(uio_in[2]),
+    .changes(uio_in[1]),
     .state(state)
 );
 
@@ -34,7 +34,8 @@ shift_register_inputs shift_reg_inst (
     .rstn(~rst_n),
     .data_in(ui_in),
     .selector(state),
-    .selector_output(uio_in[1:0]),
+    //.selector_output(uio_in[1:0]),
+    .finished(uio_in[0])
     .neuron0_output(neuron0_output),
     .neuron1_output(neuron1_output),
     .neuron2_output(neuron2_output),

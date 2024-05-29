@@ -9,26 +9,28 @@ You can also include images in this folder and reference them in the markdown. E
 
 ## How it works
 
-The project consists of a neural network of 4 parameterizable and reusable neurons, thanks to control signals.
+The project consists of a neural network of 4  (parameterizable and reusable) neurons, thanks to control signals.
 
-From an 8-bit input, the inputs will be entered into a reusable neural network of 4 neurons, through a shift register 4 different inputs are captured. Furthermore, thanks to a state machine, the parameters associated with each neuron are obtained; 4 weights and 1 bias, in total 20 parameters.
+From an 8-bit input, the inputs will be introduced into a reusable neural network of 4 neurons.
+Through a shift register, 4 different inputs are captured. Furthermore, thanks to a state machine, the parameters associated with each neuron are obtained: 4 weights and 1 bias, in total 20 parameters per network layer.
 
-State changes are made using a binary signal, where the input data, neuron parameters are received and finally the neurons are fed back. During the first state it is possible to observe the result of the applied network.
+State changes are made using a binary signal, where the input data and neuron parameters are received and then the neurons are fed back their outputs to the next layer.
+To observe the network's output one need to bring the state machine to the first state using the pin "Finished", then, in the next 4 clock cycles the outputs of the neurons 3 to 0 will be shown on the output at the same time some new external inputs can be introduced to a new neural network without the need for a reset 
 
-| First State  | Second State |
+| State  | Description|
 | ------------- | ------------- |
-| State_IN  | State_BUFF  |
-| State_BUFF  | State_OUT  |
-| State_OUT  | State_BUFF  |
-| State_OUT  | State_IN  |
+| State_IN  | The inputs of the neurons are found entering and the outputs are shown.  |
+| State_BUFF  | Neuron inputs are maintained while network parameters are entered  |
+| State_OUT  | Feedback of neurons with their previous result  |
 
-Below is the structure when entering the neuronas entries:
+Below is the structure for inputting the neurons entries:
 
-![ChipUSM1](https://github.com/Kevomlml/tt07_chipusm_neural_network/assets/158077239/9a57e34c-e0b8-4f2e-9458-a361a5374c8a)
+![ChipUSM1 (1)](https://github.com/Kevomlml/tt07_chipusm_neural_network/assets/158077239/308f0b48-d2a9-49f5-822f-4b13980fadf6)
 
-Node A corresponds to the state machine, and node B to the parameters of each neuron.
+Node A corresponds to the output of the state machine, and node B to the parameters for each neuron.
 
-Regarding the parameters, they are in series from neuron 3 to neuron 0.
+Regarding the parameters, they are fed in sequence, from neuron 3 to neuron 0. And the weights correspond to powers of 2, so, if w00=3, the input0 to the neuron0 will be multiplied by 2³.
+
 
 ![ChipUSM2](https://github.com/Kevomlml/tt07_chipusm_neural_network/assets/158077239/abb3bc67-820e-453c-9c4b-f3741869816d)
 
@@ -42,4 +44,5 @@ Each entry must be maintained for 2 clk, to be captured on the rising edge and t
 
 ## External hardware
 
-Requires an FPGA to perform the tests correctly.
+An FPGA is recomended in to perform the tests and feed the weights correctly.
+Also, the weights must be trained first in some other system, e.g. in a pc using Python or Matlab.
